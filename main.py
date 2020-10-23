@@ -51,16 +51,27 @@ def main():
             type_choice = get_user_choice(adoption_menu)
             if type_choice == 1:
                 pets.append(Pet(pet_name))
+                print ("Good choice, these pets are great to start your journey as pet owner.\n")
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
-            print("You now have %d pets" % len(pets))
+                print ("Great choice, these pets are great for one's mental health and great anxiety reducers. But they do need lots of attention.\n")
+            print("You now have %d pets.\n" % len(pets))
 
         elif choice == 2:
             for pet in pets:
                 pet.get_love()
+                if pet.happiness >= 8 and pet.happiness <10:
+                    print (f"{pet_name}, is very happy, may want rest a bit. \n")
+                elif pet.happiness >= 10:
+                    print (f"{pet_name} is very tired and needs to rest. \n")
+                
         elif choice == 3:
             for pet in pets:
                 pet.eat_food()
+                if pet.fullness >= 8 and pet.fullness < 10:
+                    print (f"{pet_name}, is statisfied, you can stop feeding it. \n")
+                elif pet.fullness >= 10:
+                    print (f"{pet_name} has over eatten, and now needs to sleep. \n")
 
         elif choice == 4:
             for pet in pets:
@@ -74,7 +85,20 @@ def main():
             # Pet levels naturally lower.
             for pet in pets:
                 pet.be_alive()
+                if pet.happiness <= 3 and pet.happiness > 0:
+                    print(f"{pet_name} is sad, you may want to play with your pet.\n")
+                elif pet.fullness <= 3 and pet.fullness > 0:
+                    print(f"{pet_name} is hungry, you may want to feed your pet.\n")
+                elif pet.fullness <= 0:
+                    print (f"{pet_name}, has died of hunger. Expect a call from the authorities!!!\n")
+                    break
+                elif pet.happiness <= 0:
+                    print (f"{pet_name}, has run away, you may want to reflect of your life choices!\n")
+                    break
 
         elif choice == 7:
+            print ("Thanks for playing, tell your friends! \n")
             break
+
+    
 main()

@@ -1,7 +1,7 @@
 
 ### Parent
 class Pet:
-    def __init__(self, name, fullness=50, happiness=50, hunger=5, mopiness=5):
+    def __init__(self, name, fullness=5, happiness=5, hunger=3, mopiness=2):
         self.name = name
         self.fullness = fullness
         self.happiness = happiness
@@ -10,10 +10,10 @@ class Pet:
         self.toys=[]
 
     def eat_food(self):
-        self.fullness += 30
+        self.fullness += 2
 
     def get_love(self):
-        self.happiness += 30
+        self.happiness += 2
     
     def be_alive(self):
         self.fullness -= self.hunger
@@ -33,13 +33,13 @@ class Pet:
 
 #####Child
 class CuddlyPet(Pet):
-    def __init__(self, name, fullness=50, hunger=5, cuddle_level=1):
-        super().__init__(name, fullness, 100, hunger, 1)
+    def __init__(self, name, fullness=5, hunger=3, cuddle_level=1, mopiness= 3):
+        super().__init__(name, fullness, 5, hunger, mopiness)
         self.cuddle_level = cuddle_level
 
     def be_alive(self):
         self.fullness -= self.hunger
-        self.happiness -= self.mopiness/2
+        self.happiness -= self.mopiness
         for toy in self.toys:
             self.happiness += toy.use()
     
