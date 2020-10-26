@@ -68,6 +68,8 @@ def main():
                 pets.append(CuddlyPet(pet_name))
                 print ("Great choice, these pets are great for one's mental health and great anxiety reducers. But they do require lots of attention.\n")
             print("You now have %d pets.\n" % len(pets))
+### first part of the main menu
+    #### when a choice is made it starts the loop of choices 
 
         elif choice == 2:
             for pet in pets:
@@ -107,10 +109,11 @@ def main():
                 elif pet.happiness <= 0:
                     print (f"{pet_name}, has run away, you may want to reflect of your life choices!\n")
                     break
+            ### when this choice is made, depending on the level pet is already, parameter is set to notify the user of pets health and happiness.
 
         elif choice == 7:
             print ("Thanks for playing, tell your friends! \n")
             break
-
+        #### Allows for the program to end, without going back to endless loop of the main menu.
     
 main()
