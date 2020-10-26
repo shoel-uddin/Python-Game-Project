@@ -1,6 +1,14 @@
+from subprocess import call 
+import os 
+def clear(): 
+    call('clear' if os.name =='posix' else 'cls') 
+clear()
+#######################
 
 from pet import Pet, CuddlyPet
 from toy import Toy
+### allows for information to be imported from the other pages so can be 
+    ### used on this main page
 
 # Begin with no pets.
 pets = []
@@ -45,6 +53,7 @@ def get_user_choice(choice_list):
             print_menu_error()
     return choice
 
+### Choose options to adopt and raise your pets
 def main():    
     while True:
         choice = get_user_choice(main_menu)

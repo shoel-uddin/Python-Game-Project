@@ -11,28 +11,29 @@ class Pet:
         #### Attributes = sillmilar to keys, its able to be pulled later on.
     def eat_food(self):
         self.fullness += 2
-
+    #### when pet is fed the points will increase by 2
     def get_love(self):
         self.happiness += 2
-    
+    #### when pet is played with the points will increase by 2
     def be_alive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness  
         for toy in self.toys:
             self.happiness += toy.use()
-            
+    #### when pet is ignored the points will decrease by the pre-determined amount       
     def get_toy(self, toy):
         self.toys.append(toy)
         for toy in self.toys:
             self.happiness += toy.use()
-
+    #### when pet is given a toy the points will increase the pre-determined amount
     def __str__(self):
         return """
         %s:
         Fullness: %d
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
-
+    #### will display the stats of the pets
+    
 #####Child
 class CuddlyPet(Pet):
     def __init__(self, name, fullness=5, hunger=3, cuddle_level=1, mopiness= 3):
