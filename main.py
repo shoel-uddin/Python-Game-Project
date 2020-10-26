@@ -1,9 +1,10 @@
+
 from pet import Pet, CuddlyPet
 from toy import Toy
 
 # Begin with no pets.
 pets = []
-
+### main menu where it starts 
 main_menu = [
     "Adopt a Pet",
     "Play with Pet",
@@ -13,11 +14,13 @@ main_menu = [
     "Do nothing",
     "Exit\n"
 ]
-
+### after adoption it allows you to pick type of pet
 adoption_menu = [
     "Pet",
     "Cuddly Pet"
 ]
+
+### Catching Error, lets the user know if their seltions were not correct 
 def print_menu_error():
     print("That was not a valid choice. Try again.\n\n\n")    
 
@@ -54,7 +57,7 @@ def main():
                 print ("Good choice, these pets are great to start your journey as pet owner.\n")
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
-                print ("Great choice, these pets are great for one's mental health and great anxiety reducers. But they do need lots of attention.\n")
+                print ("Great choice, these pets are great for one's mental health and great anxiety reducers. But they do require lots of attention.\n")
             print("You now have %d pets.\n" % len(pets))
 
         elif choice == 2:

@@ -1,6 +1,6 @@
 class Toy:
-    def __init__(self, bonus=10, newness=10):
-        self.bonus = 10
+    def __init__(self, bonus=1, newness=10):
+        self.bonus = 1
         self.newness = 10
 
     def use(self):

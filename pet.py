@@ -8,7 +8,7 @@ class Pet:
         self.hunger = hunger
         self.mopiness = mopiness
         self.toys=[]
-
+        #### Attributes = sillmilar to keys, its able to be pulled later on.
     def eat_food(self):
         self.fullness += 2
 
@@ -23,6 +23,8 @@ class Pet:
             
     def get_toy(self, toy):
         self.toys.append(toy)
+        for toy in self.toys:
+            self.happiness += toy.use()
 
     def __str__(self):
         return """
